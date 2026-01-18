@@ -20,5 +20,4 @@ jobs:
         CROWDIN_TOKEN: ${{secrets.CROWDIN_TOKEN}}
       run: |
         cd _scripts/contributors
-        npm ci
-        node . -g "${GITHUB_TOKEN}" -c "${CROWDIN_TOKEN}" -o "../../about/contributors.md"
+        ./run.sh
