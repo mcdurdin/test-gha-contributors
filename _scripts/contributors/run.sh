@@ -4,7 +4,7 @@
 
 npm ci
 node . -g "${GITHUB_TOKEN}" -c "${CROWDIN_TOKEN}" -o "../../about/contributors.md"
-if git diff --exit-code -- ../../about/contributors.md; then
+if ! git diff --exit-code -- ../../about/contributors.md; then
   git switch -c auto/contributors
   git add ../../about/contributors.md
   git commit -m "auto: refresh contributors.md
